@@ -1,6 +1,30 @@
 .App {
   text-align: center;
 }
+.App {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+input[type="file"] {
+  margin: 10px 0;
+}
+
+svg {
+  border: 1px solid #ccc;
+}
+
+select {
+  margin: 10px 0;
+}
+
+div {
+  margin-top: 20px;
+}
 
 .App-logo {
   height: 40vmin;

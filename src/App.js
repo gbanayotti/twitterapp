@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import FileUploader from "./components/FileUploader";
+import Dashboard from "./components/Dashboard";
 
 function App() {
+  const [tweetData, setTweetData] = useState(null);
+
+  const handleFileUpload = (data) => {
+    setTweetData(data);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ fontFamily: "Arial, sans-serif", backgroundColor: "#fafafa", minHeight: "100vh", padding: "20px" }}>
+      <FileUploader onUpload={handleFileUpload} />
+      {tweetData && <Dashboard tweetData={tweetData} />}
     </div>
   );
 }
